@@ -14,17 +14,15 @@ public class Radio implements Interface{
   protected boolean amfmStatus;
   protected double currentAM;
   protected double currentFM;
-  protected double listAM[];
-  protected double listFM[];
+  protected double botones[];
 
   //constructor
   public Radio(){
-  	onStatus = false;
+  	onStatus = true;
   	amfmStatus = true;
   	currentAM = 530.0;
   	currentFM = 87.9;
-  	listAM = new double[12];
-  	listFM = new double[12];
+  	botones = new double[12];
   }
 
   //métodos de interfaz
@@ -48,14 +46,14 @@ public class Radio implements Interface{
 
   public String guardar(int btn){
   	if(amfmStatus){
-  		listAM[btn-1] = currentAM;
+  		botones[btn-1] = currentAM;
   		String btnStr = String.valueOf(btn);
   		String amStr = String.valueOf(currentAM);
   		String str = "Estación: " + amStr + " AM --> Guardada en boton " + btnStr;
   		return str;
   	}
   	else{
-  		listFM[btn-1] = currentFM;
+  		botones[btn-1] = currentFM;
   		String btnStr = String.valueOf(btn);
   		String amStr = String.valueOf(currentFM);
   		String str = "Estación: " + amStr + " FM --> Guardada en boton " + btnStr;
@@ -64,14 +62,18 @@ public class Radio implements Interface{
   }
 
   public String seleccionar(int btn){
-  	if(amfmStatus){
-  		currentAM = listAM[btn-1];
+    double station = botones[btn-1]
+    if(station == 0){
+      return "Este botón no ha sido asignado";
+    }
+  	else if(station > 200.0){
+  		currentAM = station;
   		String amStr = String.valueOf(currentAM);
   		String str = "La estación actual es: " + amStr + " AM";
   		return str;
   	}
   	else{
-  		currentFM = listFM[btn-1];
+  		currentFM = station;
   		String fmStr = String.valueOf(currentFM);
   		String str = "La estación actual es: " + fmStr + " FM";
   		return str;
