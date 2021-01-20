@@ -50,14 +50,14 @@ public class Radio implements Interface{
   	if(amfmStatus){
   		listAM[btn-1] = currentAM;
   		String btnStr = String.valueOf(btn);
-  		String amStr = String.valueOf(currentAM)
+  		String amStr = String.valueOf(currentAM);
   		String str = "Estación: " + amStr + " AM --> Guardada en boton " + btnStr;
   		return str;
   	}
   	else{
   		listFM[btn-1] = currentFM;
   		String btnStr = String.valueOf(btn);
-  		String amStr = String.valueOf(currentFM)
+  		String amStr = String.valueOf(currentFM);
   		String str = "Estación: " + amStr + " FM --> Guardada en boton " + btnStr;
   		return str;
   	}
