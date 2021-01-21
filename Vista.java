@@ -14,9 +14,9 @@ public class Vista{
   public void menu(Radio radio){
     Scanner scan = new Scanner(System.in);
   
-    System.out.println("Bienvenido al radio");
+    System.out.println("Bienvenido al radio\n===================");
     System.out.println(showStation(radio));
-    System.out.println("Eliga una opción\n1. Enceder radio");
+    System.out.println("===================\nEliga una opción\n1. Enceder radio");
     System.out.println("2. Cambiar de AM a FM o de FM a AM");
     System.out.println("3. Avanzar emisora");
     System.out.println("4. Guardar emisora actual");
@@ -70,7 +70,7 @@ public class Vista{
   public String showStation(Radio radio){
     String station = String.valueOf(getStation(radio));
     String amfm = getAMFMstr(radio);
-    String str = "===================\n" + station + " " + amfm + "\n===================";
+    String str = station + " " + amfm;
     return str;
   }
 

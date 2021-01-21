@@ -97,7 +97,7 @@ class Main {
   public static String showStation(Radio radio){
     String station = String.valueOf(getStation(radio));
     String amfm = getAMFMstr(radio);
-    String str = "===================\n" + station + " " + amfm + "\n===================";
+    String str = station + " " + amfm;
     return str;
   }
 }
