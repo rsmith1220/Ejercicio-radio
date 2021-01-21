@@ -70,12 +70,18 @@ public class Radio implements Interface{
     }
   	else if(station > 200.0){
   		currentAM = station;
+      if(!amfmStatus){
+        amfm();
+      }
   		String amStr = String.valueOf(currentAM);
   		String str = "La estación actual es: " + amStr + " AM";
   		return str;
   	}
   	else{
   		currentFM = station;
+      if(amfmStatus){
+        amfm();
+      }
   		String fmStr = String.valueOf(currentFM);
   		String str = "La estación actual es: " + fmStr + " FM";
   		return str;
