@@ -99,7 +99,9 @@ public class Radio implements Interface{
   			return currentFM;
   		}
   		else{
-  			currentFM = currentFM + 0.2;
+        currentFM = currentFM * 10;
+        currentFM = currentFM + 2;
+  			currentFM = currentFM / 10;
   			return currentFM;
   		}
   	}
