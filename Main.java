@@ -20,7 +20,7 @@ class Main {
         if (op == 1){
           System.out.println("El radio ya está encendido");     
         }else if( op == 2){
-          radio.amfm();
+          radio.amFm();
         }else if (op == 3){
           radio.avanzar();
         }else if (op == 4){
@@ -55,14 +55,14 @@ class Main {
 
   //Métodos Gets 
   public static boolean getAMFMbool(Radio radio){
-    boolean x = radio.amfm();
-    x = radio.amfm();
+    boolean x = radio.amFm();
+    x = radio.amFm();
     return x;
   }
 
   public static String getAMFMstr(Radio radio){
-    boolean x = radio.amfm();
-    x = radio.amfm();
+    boolean x = radio.amFm();
+    x = radio.amFm();
     if(x){
       return "AM";
     }

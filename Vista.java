@@ -34,14 +34,14 @@ public class Vista{
   //Métodos locales para mostrar emisora
 
   public boolean getAMFMbool(Radio radio){
-    boolean x = radio.amfm();
-    x = radio.amfm();
+    boolean x = radio.amFm();
+    x = radio.amFm();
     return x;
   }
 
   public String getAMFMstr(Radio radio){
-    boolean x = radio.amfm();
-    x = radio.amfm();
+    boolean x = radio.amFm();
+    x = radio.amFm();
     if(x){
       return "AM";
     }

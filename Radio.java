@@ -36,7 +36,7 @@ public class Radio implements Interface{
     return onStatus;
   }
 
-  public boolean amfm(){
+  public boolean amFm(){
   	if (amfmStatus){
   		amfmStatus = false;
   	}
@@ -71,7 +71,7 @@ public class Radio implements Interface{
   	else if(station > 200.0){
   		currentAM = station;
       if(!amfmStatus){
-        amfm();
+        amFm();
       }
   		String amStr = String.valueOf(currentAM);
   		String str = "La estación actual es: " + amStr + " AM";
@@ -80,7 +80,7 @@ public class Radio implements Interface{
   	else{
   		currentFM = station;
       if(amfmStatus){
-        amfm();
+        amFm();
       }
   		String fmStr = String.valueOf(currentFM);
   		String str = "La estación actual es: " + fmStr + " FM";
