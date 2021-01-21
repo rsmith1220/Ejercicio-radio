@@ -25,9 +25,10 @@ class Main {
           radio.avanzar();
         }else if (op == 4){
           System.out.println("Eliga en que boton desea guardar la emisora actual");
-          int bnt = scan.nextInt();
+          int btn = scan.nextInt();
           radio.guardar(btn);
-          System.out.println("Emisora: " + showStation(radio) + " guardada en botón: "+ btn);
+          String estacion = showStation(radio);
+          System.out.println("Emisora: " + estacion + " guardada en botón: "+ btn);
         }else if(op == 5){
           System.out.println("Seleccione un botón del 1 al 12");
           int btn = scan.nextInt();
@@ -53,13 +54,13 @@ class Main {
   }
 
   //Métodos Gets 
-  public boolean getAMFMbool(Radio radio){
+  public static boolean getAMFMbool(Radio radio){
     boolean x = radio.amfm();
     x = radio.amfm();
     return x;
   }
 
-  public String getAMFMstr(Radio radio){
+  public static String getAMFMstr(Radio radio){
     boolean x = radio.amfm();
     x = radio.amfm();
     if(x){
@@ -70,30 +71,30 @@ class Main {
     }
   }
 
-  public boolean getStatus(Radio radio){
+  public static boolean getStatus(Radio radio){
     boolean x = radio.encenderApagar();
     x = radio.encenderApagar();
     return x;
   }
 
-  public double getStation(Radio radio){
+  public static double getStation(Radio radio){
     boolean amfmState = getAMFMbool(radio);
-    double station;
+    double station = 0.0;
     if(amfmState){
-      for(int i;i<=109;i++){
+      for(int i=1;i<=109;i++){
         station = radio.avanzar();
       }
       return station;
     }
     else{
-      for(int i;i<=101;i++){
-        station radio.avanzar();
+      for(int i=1;i<=101;i++){
+        station = radio.avanzar();
       }
       return station;
     }
   }
 
-  public String showStation(Radio radio){
+  public static String showStation(Radio radio){
     String station = String.valueOf(getStation(radio));
     String amfm = getAMFMstr(radio);
     String str = "===================\n" + station + " " + amfm + "\n===================";

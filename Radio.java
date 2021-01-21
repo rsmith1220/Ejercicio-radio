@@ -33,6 +33,7 @@ public class Radio implements Interface{
   	else{
   		onStatus = true;
   	}
+    return onStatus;
   }
 
   public boolean amfm(){
@@ -42,6 +43,7 @@ public class Radio implements Interface{
   	else{
   		amfmStatus = true;
   	}
+    return amfmStatus;
   }
 
   public String guardar(int btn){
@@ -62,7 +64,7 @@ public class Radio implements Interface{
   }
 
   public String seleccionar(int btn){
-    double station = botones[btn-1]
+    double station = botones[btn-1];
     if(station == 0){
       return "Este botón no ha sido asignado";
     }

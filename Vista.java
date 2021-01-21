@@ -6,7 +6,9 @@
 * @seccion 30
 */
 
-public class Vista(){
+import java.util.*;
+
+public class Vista{
   int opcion = 0;
 
   public void menu(Radio radio){
@@ -25,7 +27,18 @@ public class Vista(){
 
   }
 
+  public int getOpcion(){
+    return opcion;
+  }
+
   //Métodos locales para mostrar emisora
+
+  public boolean getAMFMbool(Radio radio){
+    boolean x = radio.amfm();
+    x = radio.amfm();
+    return x;
+  }
+
   public String getAMFMstr(Radio radio){
     boolean x = radio.amfm();
     x = radio.amfm();
@@ -39,16 +52,16 @@ public class Vista(){
 
   public double getStation(Radio radio){
     boolean amfmState = getAMFMbool(radio);
-    double station;
+    double station = 0.0;
     if(amfmState){
-      for(int i;i<=109;i++){
+      for(int i=1; i<=109;i++){
         station = radio.avanzar();
       }
       return station;
     }
     else{
-      for(int i;i<=101;i++){
-        station radio.avanzar();
+      for(int i=1; i<=101;i++){
+        station = radio.avanzar();
       }
       return station;
     }
